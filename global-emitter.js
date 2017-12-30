@@ -13,8 +13,15 @@ var GlobalEmitter = (function() {
     };
   }
 
+  function off(event) {
+    if (events.hasOwnProperty(event)) {
+      delete events[event];
+    }
+  }
+
   return {
     emit: emit,
-    on: on
+    on: on,
+    off: off
   }
 }());
